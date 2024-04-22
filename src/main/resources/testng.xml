@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="jiekousuite">
+    <test name="测试模块">
+        <classes>
+            <class name="com.lxq.testOnline.testng.V1.test1">
+
+                <method>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                </method>
+            </class>
+
+        </classes>
+    </test>
+
+    <!--  listeners 监听器 用哪个类去监听  -->
+    <listeners>
+        <listener class-name="com.lxq.testOnline.extendDemo.ExtentTestNGIReporterListener"/>
+
+
+    </listeners>
+
+</suite>
