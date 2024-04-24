@@ -1,0 +1,103 @@
+[
+
+  {
+    "description": "mock /book/search接口",
+    "request": {
+      "uri": "/book/search",
+      "method": "get",
+      "queries": {
+          "page": "1",
+          "size": "20"
+      }
+    },
+    "response":{
+      "headers":{
+        "Access-Control-Allow-Origin": "*"
+      },
+    "json":{
+      "total": 14,
+      "success": true,
+      "list": [
+        {
+          "name": "1",
+          "id": 1,
+          "pic": "/image/cover1.png",
+          "category": "2"
+        },
+        {
+          "name": "2",
+          "id": 2,
+          "pic": "/image/cover1.png"
+        },
+        {
+          "name": "测试",
+          "id": 3,
+          "pic": "/image/cover2.png",
+          "category": "4"
+        },
+        {
+          "name": "5",
+          "id": 4,
+          "pic": "5",
+          "category": "5"
+        },
+        {
+          "name": "new一个电子书",
+          "id": 5,
+          "pic": "无",
+          "category": "3"
+        },
+        {
+          "name": "1234er5tytre",
+          "id": 6,
+          "category": "6"
+        },
+        {
+          "name": "bookname",
+          "id": 7,
+          "pic": "string",
+          "category": "autoCategory"
+        },
+        {
+          "name": "name 1713873312",
+          "id": 8,
+          "pic": "string",
+          "category": "autoCategory"
+        },
+        {
+          "name": "name 1713873440",
+          "id": 9,
+          "pic": "string",
+          "category": "autoCategory"
+        },
+        {
+          "name": "name 1713873561",
+          "id": 10,
+          "pic": "string"
+        }
+      ],
+      "message": null
+    }
+    }
+  },
+
+  {
+    "description": "编辑电子书",
+    "request": {
+      "uri": "/book/edit",
+      "method": "post",
+      "headers": {
+        "Accept-Language": "zh-CN",
+        "Content-Type": "application/json"
+      },
+      "json": {"pic":"autoFM","name":"auto","id":10}
+    },
+    "response":{
+  "headers":{
+    "Access-Control-Allow-Origin": "*"
+  },
+  "json": {"total":0,"success":true,"list":null,"message":null}
+    }
+  }
+
+]
