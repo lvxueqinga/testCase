@@ -1,15 +1,31 @@
 package com.lxq.testOnline.util;
 
-
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 
 public class JSONCompareUtil {
+    private static Set<String> ignoreFields;
 
+    static {
+        // 初始化忽略字段集合
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/tailai/Desktop/testOnline/src/main/java/com/lxq/testOnline/util/ignore_fields.txt"))) {
+            ignoreFields = new HashSet<>();
+            String line;
+            while ((line = reader.readLine()) != null) { //忽略#开头的行增加判断!line.trim().startsWith("#")
+                ignoreFields.add(line.trim());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            // 如果无法读取ignore_fields.txt，可以设置为null或抛出异常
+            ignoreFields = null;
+        }
+    }
     /**
      * 比较两个JSON对象是否相等，包括嵌套的JSONObject和 JSONArray。
      *
@@ -18,6 +34,7 @@ public class JSONCompareUtil {
      * @return 如果两个JSON对象相等，返回true；否则返回false。
      */
     public static boolean compareJSON(JSONObject json1, JSONObject json2) {
+
         // 确保两个对象都有相同的键数量
         if (json1.keySet().size() != json2.keySet().size()) {
             return false;
@@ -25,6 +42,11 @@ public class JSONCompareUtil {
 
         // 遍历第一个JSON对象的所有键
         for (String key : json1.keySet()) {
+            // 检查键是否在忽略列表中，如果是，则跳过
+            if (ignoreFields != null && ignoreFields.contains(key)) {
+                continue;
+            }
+
             if (!json2.containsKey(key)) {
                 return false; // 如果第二个对象没有这个键，直接返回false
             }
