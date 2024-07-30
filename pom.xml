@@ -14,9 +14,9 @@
 	<name>testOnline</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
-<!--		<maven.test.failure.ignore>true</maven.test.failure.ignore>-->
-<!--		<maven.test.skip>true</maven.test.skip>-->
+		<java.version>11</java.version>
+
+		<suiteXmlFile>testng.xml</suiteXmlFile>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -149,12 +149,33 @@
 
 	</dependencies>
 
+
 	<build>
+		<finalName>testOnline</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+
+				<configuration>
+
+					<argLine>-Dfile.encoding=UTF-8</argLine>
+					<!--<argLine>-Dfile.encoding=UTF-8 -Xmx1024m -XX:MaxPermSize=256m</argLine>-->
+					<suiteXmlFiles>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+					</suiteXmlFiles>
+					<testFailureIgnore>true</testFailureIgnore>
+
+					<reportsDirectory>target/surefire-reports</reportsDirectory>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
