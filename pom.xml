@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version>
+		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lxq</groupId>
@@ -14,7 +14,7 @@
 	<name>testOnline</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 
 		<suiteXmlFile>testng.xml</suiteXmlFile>
 	</properties>
@@ -136,6 +136,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
 			<optional>true</optional>
 		</dependency>
 
@@ -157,6 +158,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
 			</plugin>
 
 			<plugin>
@@ -175,6 +177,9 @@
 					<reportsDirectory>target/surefire-reports</reportsDirectory>
 				</configuration>
 			</plugin>
+
+
+
 
 		</plugins>
 	</build>
