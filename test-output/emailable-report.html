@@ -1,88 +1,35 @@
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Emailable Report</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
 </head>
 <body>
-<h1>Emailable Report</h1>
-
-
-<table width="100%" border="1" cellspacing="2" cellpadding="10" style="border-collapse: collapse; display: table;">
-    <tbody>
-        <tr>
-          <th>Test Method</th>
-          <th>Status</th>
-          <th>Start Time</th>
-          <th>Duration</th>
-        </tr>
-
-              <tr>
-                <th colspan="4">Test Name: <em>测试模块</em> (Suite: <em>jiekousuite</em>)</th>
-              </tr>
-
-                  <tr bgcolor=#FF7F7F>
-                    <td>
-                        <font color="white"><em>logDemo</em></font>
-                    </td>
-                    <td>
-                        <font color="white">FAIL</font>
-                    </td>
-                    <td>
-                        <font color="white">Feb 28, 2023 9:14:01 PM</font>
-                    </td>
-                    <td>
-                        <font color="white">0h 0m 0s+10ms</font>
-                    </td>
-                  </tr>
-                  <tr bgcolor=#FF7F7F>
-                    <td>
-                        <font color="white"><em>test1</em></font>
-                    </td>
-                    <td>
-                        <font color="white">FAIL</font>
-                    </td>
-                    <td>
-                        <font color="white">Feb 28, 2023 9:14:01 PM</font>
-                    </td>
-                    <td>
-                        <font color="white">0h 0m 0s+2ms</font>
-                    </td>
-                  </tr>
-                  <tr bgcolor=#8CA93E>
-                    <td>
-                        <font color="white"><em>test2</em></font>
-                    </td>
-                    <td>
-                        <font color="white">PASS</font>
-                    </td>
-                    <td>
-                        <font color="white">Feb 28, 2023 9:14:01 PM</font>
-                    </td>
-                    <td>
-                        <font color="white">0h 0m 0s+0ms</font>
-                    </td>
-                  </tr>
-                  <tr bgcolor=#8CA93E>
-                    <td>
-                        <font color="white"><em>test3</em></font>
-                    </td>
-                    <td>
-                        <font color="white">PASS</font>
-                    </td>
-                    <td>
-                        <font color="white">Feb 28, 2023 9:14:01 PM</font>
-                    </td>
-                    <td>
-                        <font color="white">0h 0m 0s+0ms</font>
-                    </td>
-                  </tr>
-    </tbody>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">jiekousuite</th></tr>
+<tr><td><a href="#t0">测试模块</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">2</td><td class="num">34</td><td></td><td></td></tr>
 </table>
-
-<p style="color: gray; font-size: 10px; text-align: right;">
-    Reports by <a href="http://vimalselvam.com">vimalselvam.com</a>
-</p>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">jiekousuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">测试模块 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.lxq.testOnline.testng.V1.test1</td><td><a href="#m0">test2</a></td><td rowspan="1">1722335036032</td><td rowspan="1">0</td></tr><tr class="failedeven"><td><a href="#m1">test3</a></td><td rowspan="1">1722335036033</td><td rowspan="1">0</td></tr><tr><th colspan="4">测试模块 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.lxq.testOnline.testng.V1.test1</td><td><a href="#m2">test1</a></td><td rowspan="1">1722335036021</td><td rowspan="1">10</td></tr></tbody>
+</table>
+<h2>测试模块</h2><h3 id="m0">com.lxq.testOnline.testng.V1.test1#test2</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: 1==2
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at com.lxq.testOnline.testng.V1.test1.test2(test1.java:18)
+	at com.lxq.testOnline.TestOnlineApplication.main(TestOnlineApplication.java:47)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:107)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.lxq.testOnline.testng.V1.test1#test3</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">这是我自己的日志</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: 这是我自己的运行时异常
+	at com.lxq.testOnline.testng.V1.test1.test3(test1.java:25)
+	at com.lxq.testOnline.TestOnlineApplication.main(TestOnlineApplication.java:47)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:107)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.lxq.testOnline.testng.V1.test1#test1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

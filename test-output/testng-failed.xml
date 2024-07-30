@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [jiekousuite]">
+  <listeners>
+    <listener class-name="com.lxq.testOnline.extendDemo.ExtentTestNGIReporterListener"/>
+  </listeners>
+  <test thread-count="5" name="测试模块(failed)">
+    <classes>
+      <class name="com.lxq.testOnline.testng.V1.test1">
+        <methods>
+          <include name="test3"/>
+          <include name="test2"/>
+        </methods>
+      </class> <!-- com.lxq.testOnline.testng.V1.test1 -->
+    </classes>
+  </test> <!-- 测试模块(failed) -->
+</suite> <!-- Failed suite [jiekousuite] -->
